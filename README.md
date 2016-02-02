@@ -16,7 +16,7 @@ npm install
 npm start
 ```
 
-Visit `http://localhost:3000` in your browser, edit `src/purs/App.purs` and
+Visit `http://localhost:3000/webpack-dev-server` in your browser, edit `src/purs/App.purs` and
 watch the magic!
 
 ## Available tasks
