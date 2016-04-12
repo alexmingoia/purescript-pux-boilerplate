@@ -20,7 +20,7 @@ module.exports = {
   plugins: [
     new PurescriptWebpackPlugin({
       src: ['bower_components/purescript-*/src/**/*.purs', 'src/**/*.purs'],
-      ffi: ['bower_components/purescript-*/src/**/*.js'],
+      ffi: ['bower_components/purescript-*/src/**/*.js', 'src/purs/*.js'],
       bundle: true,
       psc: 'psa'
     }),
