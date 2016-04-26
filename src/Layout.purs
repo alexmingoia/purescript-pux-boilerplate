@@ -1,34 +1,40 @@
 module App.Layout where
-
-import App.Counter as Counter
+import App.Form as Form
 import App.Routes (Route(Home, NotFound))
-import Prelude (($), map)
-import Pux.Html (Html, div, h1, p, text)
+import Prelude (($), map, (<>), show, const)
+import Pux.Html (Html, div, h1, p, text, form, button, input, span)
+import Pux.Html.Attributes (type_, value, name)
+import Pux.Html.Events (FormEvent, onChange, onSubmit)
+import Data.Foreign (readInt)
+import Unsafe.Coerce
+import Data.Either
+import Data.Maybe
+
 
 data Action
-  = Child (Counter.Action)
+  = Child (Form.Action)
   | PageView Route
 
 type State =
   { route :: Route
-  , count :: Counter.State }
+  , count :: Form.State }
 
 init :: State
 init =
   { route: NotFound
-  , count: Counter.init }
+  , count: Form.init }
 
 update :: Action -> State -> State
 update (PageView route) state = state { route = route }
-update (Child action) state = state { count = Counter.update action state.count }
+update (Child action) state = state { count = Form.update action state.count }
 
 view :: State -> Html Action
 view state =
   div
     []
-    [ h1 [] [ text "Pux Starter App" ]
+    [ h1 [] [ text "Search for sequences" ]
     , p [] [ text "Change src/Layout.purs and watch me hot-reload." ]
     , case state.route of
-        Home -> map Child $ Counter.view state.count
+        Home -> map Child $ Form.view state.count
         NotFound -> App.NotFound.view state
     ]

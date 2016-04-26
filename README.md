@@ -1,4 +1,4 @@
-# pux-starter-app
+# Sequence-Database
 
 Starter [Pux](https://github.com/alexmingoia/purescript-pux/) application
 using webpack with hot-reloading and
