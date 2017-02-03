@@ -50,7 +50,7 @@ var config = {
       filename: 'index.html'
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoErrorsPlugin(),
+    new webpack.NoEmitOnErrorsPlugin(),
   ],
   resolveLoader: {
     modules: [
