@@ -10,7 +10,7 @@
     "starter-app"
   ],
   "scripts": {
-    "postinstall": "bower cache clean && bower install",
+    "postinstall": "psc-package update",
     "clean": "rimraf static/dist",
     "build": "npm run clean && webpack --config ./webpack.config.js --progress --profile --colors",
     "watch": "npm run clean && webpack-dev-server --content-base static/ --hot --inline --config webpack.config.js",
@@ -31,7 +31,6 @@
     "node": "^6.0.0"
   },
   "dependencies": {
-    "bower": "^1.7.9",
     "preact": "^8.2.1",
     "preact-compat": "^3.17.0",
     "purescript": "^0.11.6",

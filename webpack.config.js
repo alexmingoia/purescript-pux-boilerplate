@@ -40,7 +40,8 @@ module.exports = {
           bundleOutput: 'static/dist/bundle.js'
         } : {
           psc: 'psa',
-          pscIde: true
+          pscIde: true,
+          pscPackage: true
         }
       }
     ],

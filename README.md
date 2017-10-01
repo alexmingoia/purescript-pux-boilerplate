@@ -35,7 +35,7 @@ After compiling the app should be available at `http://localhost:8080`.
 - `static`: Static files served with application.
 - `support`: Support files for building.
   - `support/entry.js`: Webpack entry point. Handles hot reloading.
-- `bower.json`: Bower package configuration.
+- `psc-package.json`: psc-package configuration.
 - `package.json`: Node package configuration.
 - `webpack.config.js`: Webpack configuration.
 
