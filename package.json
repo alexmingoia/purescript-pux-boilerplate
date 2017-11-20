@@ -38,8 +38,8 @@
     "purescript-psa": "^0.5.1",
     "purs-loader": "^3.1.0",
     "rimraf": "^2.5.2",
-    "serve": "^5.2.4",
-    "webpack": "^2.7.0",
+    "serve": "^6.4.1",
+    "webpack": "^3.8.1",
     "webpack-dev-server": "^2.7.1",
     "webpack-node-externals": "^1.5.4",
     "xhr2": "^0.1.3"
