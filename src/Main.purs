@@ -1,25 +1,22 @@
 module Main where
 
-import Prelude
-import App.Events (AppEffects, Event(..), foldp)
+import App.Events (Event(..), foldp)
 import App.Routes (match)
 import App.State (State, init)
 import App.View.Layout (view)
-import Control.Monad.Eff (Eff)
-import DOM (DOM)
-import DOM.HTML (window)
-import DOM.HTML.Types (HISTORY)
-import Pux (CoreEffects, App, start)
+import Web.HTML (window)
+import Pux (App, start)
 import Pux.DOM.Events (DOMEvent)
 import Pux.DOM.History (sampleURL)
 import Pux.Renderer.React (renderToDOM)
+import Effect (Effect)
+import Control.Bind ((=<<), bind, discard)
+import Control.Applicative (pure)
 import Signal ((~>))
 
 type WebApp = App (DOMEvent -> Event) Event State
 
-type ClientEffects = CoreEffects (AppEffects (history :: HISTORY, dom :: DOM))
-
-main :: String -> State -> Eff ClientEffects WebApp
+main :: String -> State -> Effect WebApp
 main url state = do
   -- | Create a signal of URL changes.
   urlSignal <- sampleURL =<< window
