@@ -30,7 +30,7 @@ module.exports = {
     publicPath: appConfig.public_path
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.purs$/,
         loader: 'purs-loader',

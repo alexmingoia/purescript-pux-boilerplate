@@ -1,14 +1,11 @@
 module App.Events where
 
+import Prelude
 import App.Routes (Route)
 import App.State (State(..))
-import Data.Function (($))
-import Network.HTTP.Affjax (AJAX)
 import Pux (EffModel, noEffects)
 
 data Event = PageView Route
 
-type AppEffects fx = (ajax :: AJAX | fx)
-
-foldp :: ∀ fx. Event -> State -> EffModel State Event (AppEffects fx)
+foldp :: Event -> State -> EffModel State Event
 foldp (PageView route) (State st) = noEffects $ State st { route = route, loaded = true }
